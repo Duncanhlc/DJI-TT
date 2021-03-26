@@ -1,0 +1,16 @@
+import time
+from robomaster import robot
+
+UFO = robot.Drone()
+UFO.initialize()
+UFO_flight = UFO.flight
+UFO_led = UFO.led
+
+while True:
+   UFO_TOF = UFO.sensor.get_ext_tof()
+   print("ext tof: {0}".format(UFO_TOF))
+   if int(UFO_TOF) <= 300:
+       UFO_led.set_led(255, 0, 0)
+   else:
+       UFO_led.set_led(0, 255, 0)
+   time.sleep(0.5)
