@@ -1,0 +1,16 @@
+from robomaster import robot
+
+UFO = robot.Drone()
+UFO.initialize()
+
+UFO_flight = UFO.flight
+
+UFO_flight.takeoff().wait_for_completed()
+UFO_flight.left(distance=60)
+UFO_flight.forward(distance=60)
+UFO_flight.right(distance=60)
+UFO_flight.forward(distance=60)
+UFO_flight.right(distance=60)
+UFO_flight.forward(distance=60)
+UFO_flight.left(distance=60)
+UFO_flight.land().wait_for_completed()
