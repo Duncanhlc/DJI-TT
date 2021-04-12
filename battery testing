@@ -1,0 +1,9 @@
+import robomaster
+from robomaster import robot
+
+UFO = robot.Drone()
+UFO.initialize()
+UFO_battery = UFO.battery
+
+battery_info = UFO_battery.get_battery()
+print("Drone battery soc: {0}".format(battery_info))
